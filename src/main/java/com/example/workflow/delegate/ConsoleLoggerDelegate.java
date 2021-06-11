@@ -6,14 +6,12 @@ import org.camunda.bpm.engine.delegate.JavaDelegate;
 import org.springframework.stereotype.Component;
 
 @Slf4j
-@Component("helloDelegate")
-public class ClienteDelegate implements JavaDelegate {
+@Component("logger")
+public class ConsoleLoggerDelegate implements JavaDelegate {
 
     @Override
     public void execute(DelegateExecution delegateExecution) throws Exception {
-        log.info("Executando camunda");
-        log.info(delegateExecution.getProcessBusinessKey());
         log.info(delegateExecution.getCurrentActivityName());
+        log.info(" order = {}", delegateExecution.getVariable("order"));
     }
-
 }
