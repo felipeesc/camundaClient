@@ -13,5 +13,9 @@ public class StartDelegate implements JavaDelegate {
     @Override
     public void execute(DelegateExecution delegateExecution) throws Exception {
         delegateExecution.setVariable("order", null);
+
     }
+
 }
+
+
